@@ -1,0 +1,20 @@
+<div class="col-md-12" >  
+    <div class="row">
+        <div  *ngFor="let inv of service.list   | paginate: { itemsPerPage: 10, currentPage: p }" >
+        <div class="news_spost new_spost">
+          <div class="ltr">
+            <div class="Content_spost">
+              <div class="title_Spost"><a   [routerLink]="'/posts/'+  inv?.inventoryDetailId">
+                <span>{{ inv.title }}</span>
+                </a></div>
+              <div class="C_Spost">
+                <span>{{ inv.body }}</span>
+              </div>    
+            </div>
+          </div>    
+        </div> 
+      </div>
+    </div>
+    <pagination-controls   class="pt-2" (pageChange)="p = $event" previousLabel="قبلی"
+    nextLabel="بعدی"  style="display: flex; justify-content: center;"></pagination-controls>
+    </div>

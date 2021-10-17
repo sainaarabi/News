@@ -1,0 +1,35 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <div class="panel form-group form " style="direction: ltr;">
+        <input type="hidden" name="inventoryDetailId" [value]="service.formData.inventoryDetailId">
+        <div class="title">
+            <span class="header"> افزودن اخبار </span>
+        </div>
+        <div class="form-group">
+            <label style="font-size: 15px;"> عنوان</label>
+            <input class="form-control form-control-lg" name="title" #title="ngModel"
+                [(ngModel)]="service.formData.title" required [class.invalid]="title.invalid && title.touched">
+        </div>
+        <br>
+        <div class="form-group">
+            <label style="font-size: 15px;"> متن خبر </label>
+            <textarea class="form-control form-control-lg" [(ngModel)]="service.formData.body" name="body"
+                #body="ngModel" rows="8" required [class.invalid]="body.invalid && body.touched"></textarea>
+        </div>
+
+       
+        <div class="btn-panel form-group" style="text-align: center;">
+            <button class="button2 btn-submit" type="submit" [disabled]="form.invalid"> <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                ثبت خبر </button>
+        </div>
+        <div class="btn-panel form-group">
+            <button class="button2 btn-reset" type="reset"  (click)= "refresh()"> <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                  پاک کردن فرم </button>
+        </div>
+    </div>
+</form>

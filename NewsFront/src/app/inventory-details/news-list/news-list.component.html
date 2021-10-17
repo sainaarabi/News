@@ -1,0 +1,27 @@
+<div class="panel form-group form "   style="direction: ltr;" >
+    <div class="title">
+        <span    class="header">لیست اخبار</span>
+    </div>
+   <div >
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <th>عنوان </th>
+                    <th>شرح خبر</th>
+                    <th>  ویرایش....</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inv of service.list">
+                    <td (click)="populateForm(inv)">{{ inv.title }}</td>
+                    <td (click)="populateForm(inv)">{{ inv.body }}</td>
+                    <td>
+                        <i class="fa fa-trash-o fa-lg text-danger " (click)="onDelete(inv.inventoryDetailId)"></i>
+                        <i  class="fa fa-edit  fa-lg text-danger"  (click)="populateForm(inv)">  </i> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+</div>
+ 

@@ -1,0 +1,56 @@
+ <app-header></app-header>
+ <div  class="wrap"> 
+
+<div class="panel" style="height: 330px; direction: ltr;">
+    
+    <div class="title">
+        <span class="header" >خبر</span>
+    </div>
+
+    <div class="item" style="height:190px">
+        <div class="item-title">
+            <span>{{postData?.title}}</span>
+        </div>
+
+        <div class="content">{{postData?.body}}</div>
+        <div style="text-align: center;" class="content" *ngIf="isError">
+           no information to show
+        </div>
+
+        <div class="item-btns pt-5">
+            <button class="btn-delete button2 "   routerLink="/Home">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                  برگشت </button>
+        </div>
+</div>
+</div>
+<div id="footer">
+    <div class="rtl">
+      <div id="Menu_Footer">
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">آرشیو</a></li>
+          <li><a href="#">پیوند ها</a></li>
+          <li><a href="#">آب و هوا</a></li>
+          <li><a href="#">اوقات شرعی</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div id="Copyright">
+        &copy; کليه حقوق اين سايت متعلق به سایت خبری ایمان بوده و استفاده از مطالب آن با ذکر منبع بلا مانع است
+      </div>
+    </div>
+  
+    <div class="ltr">
+      <figure id="canvas"></figure>
+      <script src="/assets/lib/svg.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/assets/lib/svg.easing.min.js" type="text/javascript" charset="utf-8"></script>
+      <script src="/assets/lib/svg.clock.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript" charset="utf-8">
+        SVG('canvas').clock("100%").start()
+      </script>
+    </div>
+</div>
